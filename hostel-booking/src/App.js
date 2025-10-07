@@ -8,6 +8,7 @@ function App() {
      <div>
       <p>Book your stay now!</p>
       <button>Book Now</button>
+      <h2>Available Hostels</h2>
      </div>
     </div>
   );
