@@ -3,7 +3,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Hostel Booking System</h1>
+      <h1>Find your hostel.</h1>
+      <h2>Book comfortable rooms, easily.</h2>
       <p>Welcome to the Hostel Booking System!</p>
      <div>
       <p>Book your stay now!</p>
