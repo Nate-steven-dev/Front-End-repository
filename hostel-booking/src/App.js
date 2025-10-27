@@ -1,20 +1,15 @@
-import './App.css';
-import React from 'react';
-import Login from './components/login';
-import Register from './components/register';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Login from './components/login.js';
+import Register from './components/register.js';
+import { Link, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
       <div className="App">
-        <h1>Hostel Booking System</h1>
+        <div style = {{ textAlign: 'center' }}>
+        <h1 style = {{ color: '#0c48ee'}}>Hostel Booking System</h1>
         <p>Welcome to the Hostel Booking System!</p>
-        <div>
-          <p>Book your stay now!</p>
-          <button>Book Now</button>
-          <h2>Available Hostels</h2>
-        </div>
-        <nav>
+          <nav>
           <ul>
             <li>
               <button>
@@ -28,6 +23,7 @@ function App() {
             </li>
           </ul>
         </nav>
+        </div>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
