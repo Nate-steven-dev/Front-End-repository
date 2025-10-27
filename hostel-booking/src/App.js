@@ -1,27 +1,34 @@
 import Login from './components/login.js';
 import Register from './components/register.js';
-import { Route, Routes } from 'react-router-dom';
-import Footer from './components/footer.js';
-import Navbar from './components/navbar.js';
-// ...existing code...
+import { Link, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hostel Booking System</h1>
-
-      {/* show navbar on every page */}
-      <Navbar />
-
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        {/* keep /navbar route only if you still want a dedicated route */}
-        <Route path="/navbar" element={<Navbar />} />
-      </Routes>
-
-      <Footer />
-    </div>
+      <div className="App">
+        <div style = {{ textAlign: 'center' }}>
+        <h1 style = {{ color: '#0c48ee'}}>Hostel Booking System</h1>
+        <p>Welcome to the Hostel Booking System!</p>
+          <nav>
+          <ul>
+            <li>
+              <button>
+                <Link to="/login">Login</Link>
+              </button>
+            </li>
+            <li>
+              <button>
+                <Link to="/register">Register</Link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        </div>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
   );
 }
 
