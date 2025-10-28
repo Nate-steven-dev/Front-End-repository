@@ -10,7 +10,7 @@ function Footer() {
                 <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a><br />
                 <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
             </p>
-            <p className="copyright">&copy; 2025 Hostel Booking System. All rights reserved.</p>
+            <p className="copyright">&copy; {new Date().getFullYear()} Hostel Booking System. All rights reserved.</p>
         </div>
     );
 }

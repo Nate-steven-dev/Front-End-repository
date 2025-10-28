@@ -3,10 +3,15 @@ import './login.css';
 
 function Register() {
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: add register logic
+  };
+
   return (
     <div className="login-container">
       <h2 className="title">Register</h2>
-      <form onSubmit>
+      <form onSubmit={handleSubmit}>
         <div className="input-group">
           <input type="text" placeholder="Full Name"/>
         </div>
@@ -23,7 +28,7 @@ function Register() {
             <input type="password" placeholder="Password"/>
         </div>
 
-        <button type="submit"className="btn">Register</button>
+  <button type="submit" className="btn">Register</button>
       </form>
       
       <p>Already have an account? <a href="/login" className="link">Login here</a>.</p>
