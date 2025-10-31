@@ -1,40 +1,38 @@
-import React from "react";
-import './login.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Register() {
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: add register logic
-  };
-
-  return (
-    <div className="login-container">
-      <h2 className="title">Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input type="text" placeholder="Full Name"/>
+    return(
+        <div>
+            <h1>Create an Account</h1>
+            <div className="register-container">
+                <form>
+                <div className="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required/>
+                </div>
+                <div className="form-group">
+                    <label for="email">University Email</label>
+                    <input type="email" id="email" required/>
+                </div>
+                <div className="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required/>
+                </div>
+                <div className="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required/>
+                </div>
+                <div className="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required/>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
-
-        <div className="input-group">
-          <input type="email" placeholder="University Email"/>
         </div>
-
-        <div className="input-group">
-          <input type="text" placeholder="Phone Number"/>
-        </div>
-
-        <div className="input-group">
-            <input type="password" placeholder="Password"/>
-        </div>
-
-  <button type="submit" className="btn">Register</button>
-      </form>
-      
-      <p>Already have an account? <a href="/login" className="link">Login here</a>.</p>
-      
-    </div>
-  );
-}
+    );
+};
 
 export default Register;
