@@ -1,37 +1,49 @@
-import Login from './components/login.js';
-import Register from './components/register.js';
-import Dashboard from './components/dashboard.js';
-import { Link, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import Login from './components/login';
+import Register from './components/register';
 
+function Home() {
+  return (
+    <div className="home-background">
+      <div className="home-container">
+        <div className="intro-text">
+          <h1>Welcome to Hostel Explorer</h1>
+          <h3>Finding the perfect place to stay while studying has never been easier.</h3>
+          <p>
+            At Hostel Explorer, we understand what students need — comfort, safety, affordability, and a friendly community.
+          </p>
+          <ul className="features-list">
+            <li>🏠 Modern, fully furnished rooms</li>
+            <li>📶 Free high-speed Wi-Fi</li>
+            <li>🧺 Laundry and study areas</li>
+            <li>👫 Safe and supportive student environment</li>
+            <li>💰 Flexible and affordable payment options</li>
+          </ul>
+          <p>Whether you’re starting a new semester or moving closer to campus,
+            we’re here to make your hostel booking simple and stress-free.</p>
+
+          <p><strong>Book your room today and focus on what truly matters — your studies and your success!</strong></p>
+        </div>
+
+        <div className="auth-buttons">
+          <Link to="/login" className="btn">Login</Link>
+          <Link to ="/register" className="btn">Register</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
-      <div className="App">
-        <div style = {{ textAlign: 'center' }}>
-        <h1 style = {{ color: '#0c48ee'}}>Hostel Booking System</h1>
-        <p>Welcome to the Hostel Booking System!</p>
-          <nav>
-          <ul>
-            <li>
-              <button>
-                <Link to="/login">Login</Link>
-              </button>
-            </li>
-            <li>
-              <button>
-                <Link to="/register">Register</Link>
-              </button>
-            </li>
-          </ul>
-        </nav>
-        </div>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </div>
-   );
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
+  );
 }
 
 export default App;
