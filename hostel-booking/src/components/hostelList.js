@@ -1,11 +1,29 @@
 import React from "react";
 import '../App.css';
 
+const Hostel= (props) =>{
+    return(
+         <div class="hostel-item card">
+                <img alt="hostel"/>
+                <div class="card-content">
+                    <h4>{props.name}</h4>
+                    <p>Location: {props.location}</p>
+                    <div class="rating">
+                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
+                    </div>
+                    <p>{props.description}</p>
+                    <a href="hostel-details.html">View Details</a>
+                </div>
+    </div>
+    );
+   
+}
+
 function HostelList(){
     return(
         <div>
             <h1>Explore our Hostels</h1>
-        <p>Welcome to our hostel listing page. Here you can find various hostels to stay during your travels.</p>
+        <p>Welcome to our hostel listing page. Here you can find various hostels to stay during your studies.</p>
         <div class="hostel-search">
             <input placeholder="search by name or location" />
             <button>Search</button>
@@ -17,96 +35,15 @@ function HostelList(){
             <option value="rating-desc">Rating: High to Low</option>
         </select>
         <div id="hostel-list">
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Dream World Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Olympia Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Kare Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Juliana Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Muhika Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Aryan Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-
-             <div class="hostel-item card">
-                <img alt="hostel"/>
-                <div class="card-content">
-                    <h4>Aryan Hostel</h4>
-                    <p>Location: City</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>A vibrant hostel in the heart of the city, close to all major attractions.</p>
-                    <a href="hostel-details.html">View Details</a>
-                </div>
-             </div>
-            
+             
+            <Hostel name="Dream world Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/> 
+            <Hostel name="Olympia Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/> 
+            <Hostel name="Mwesigwa Residence" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
+            <Hostel name="Helican Hostel" location="Kikumi kikumi" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
+            <Hostel name="Aryan Hostel" location="Wandegeya" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
+            <Hostel name="Muhika Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
+            <Hostel name="New Nana Hostel" location="Old Kampala" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
+            <Hostel name="Baskon Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
         </div>
 
         <div class="About-us">
