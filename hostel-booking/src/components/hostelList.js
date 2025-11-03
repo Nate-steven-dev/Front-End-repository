@@ -1,59 +1,82 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import Footer from './footer';
 
-const Hostel= (props) =>{
-    return(
-         <div class="hostel-item card">
-                <img src={props.image} alt="hostel"/>
-                <div class="card-content">
-                    <h4>{props.name}</h4>
-                    <p>Location: {props.location}</p>
-                    <div class="rating">
-                        <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
-                    </div>
-                    <p>{props.description}</p>
-                    <a href="hostel-details.js">View Details</a>
+// Mock data for hostels - in a real app, this would come from an API
+const hostelsData = [
+    { id: 1, name: "Dream world Hostel", location: "Kikoni", description: "A vibrant hostel in the heart of the city.", image: "https://via.placeholder.com/300x200" },
+    { id: 2, name: "Olympia Hostel", location: "Kikoni", description: "Close to all major attractions.", image: "https://via.placeholder.com/300x200" },
+    { id: 3, name: "Mwesigwa Residence", location: "Kikoni", description: "Safe, affordable, and social stays.", image: "https://via.placeholder.com/300x200" },
+    { id: 4, name: "Helican Hostel", location: "Kikumi kikumi", description: "Modern, fully furnished rooms.", image: "https://via.placeholder.com/300x200" },
+    { id: 5, name: "Aryan Hostel", location: "Wandegeya", description: "A friendly and supportive environment.", image: "https://via.placeholder.com/300x200" },
+    { id: 6, name: "Muhika Hostel", location: "Kikoni", description: "Your home away from home.", image: "https://via.placeholder.com/300x200" },
+    { id: 7, name: "New Nana Hostel", location: "Old Kampala", description: "Experience the best of student life.", image: "https://via.placeholder.com/300x200" },
+    { id: 8, name: "Baskon Hostel", location: "Kikoni", description: "Comfort and convenience in one package.", image: "https://via.placeholder.com/300x200" },
+];
+
+const Hostel = ({ id, name, location, description, image }) => {
+    return (
+        <div className="hostel-item card">
+            <img src={image} alt={`${name} hostel`} />
+            <div className="card-content">
+                <h4>{name}</h4>
+                <p>Location: {location}</p>
+                <div className="rating">
+                    <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
                 </div>
-    </div>
+                <p>{description}</p>
+                {/* Use Link for internal navigation */}
+                <Link to={`/hostel/${id}`}>View Details</Link>
+            </div>
+        </div>
     );
-   
 }
 
-function HostelList(){
-    return(
+function HostelList() {
+    // State for search and sort functionality (to be implemented)
+    const [searchQuery, setSearchQuery] = useState('');
+    const [sortOrder, setSortOrder] = useState('price-asc');
+
+    // Filtered and sorted hostels would be derived here
+    const displayedHostels = hostelsData.filter(hostel =>
+        hostel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        hostel.location.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    return (
         <div>
             <h1>Explore our Hostels</h1>
-        <p>Welcome to our hostel listing page. Here you can find various hostels to stay during your studies.</p>
-        <div class="hostel-search">
-            <input placeholder="search by name or location" />
-            <button>Search</button>
-        </div>
-        <select id="sort-options">
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="rating-asc">Rating: Low to High</option>
-            <option value="rating-desc">Rating: High to Low</option>
-        </select>
-        <div id="hostel-list">
-             
-            <Hostel name="Dream world Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/> 
-            <Hostel name="Olympia Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/> 
-            <Hostel name="Mwesigwa Residence" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
-            <Hostel name="Helican Hostel" location="Kikumi kikumi" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
-            <Hostel name="Aryan Hostel" location="Wandegeya" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
-            <Hostel name="Muhika Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
-            <Hostel name="New Nana Hostel" location="Old Kampala" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
-            <Hostel name="Baskon Hostel" location="Kikoni" description="A vibrant hostel in the heart of the city, close to all major attractions."/>
-        </div>
+            <p>Welcome to our hostel listing page. Here you can find various hostels to stay during your studies.</p>
+            <div className="hostel-search">
+                <input
+                    type="text"
+                    placeholder="Search by name or location"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button>Search</button>
+            </div>
+            <select id="sort-options" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-asc">Rating: Low to High</option>
+                <option value="rating-desc">Rating: High to Low</option>
+            </select>
+            <div id="hostel-list">
+                {displayedHostels.length > 0 ? (
+                    displayedHostels.map(hostel => <Hostel key={hostel.id} {...hostel} />)
+                ) : (
+                    <p>No hostels match your search.</p>
+                )}
+            </div>
 
-        <div class="About-us">
-            <h4>About Us</h4>
-            <p>Your global community for adventure and connection. We provide safe, affordable, and social stays for students</p>
-        </div>
-        <Footer />
+            <div className="About-us">
+                <h4>About Us</h4>
+                <p>Your global community for adventure and connection. We provide safe, affordable, and social stays for students</p>
+            </div>
+            <Footer />
         </div>
     );
-
 }
-    
 export default HostelList;

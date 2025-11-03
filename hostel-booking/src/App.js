@@ -6,6 +6,7 @@ import Register from './components/register';
 import HostelList from './components/hostelList';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/adminDashboard';
+import StudentDashboard from './components/studentDashboard';
 
 function Home() {
   return (
@@ -48,6 +49,7 @@ function App() {
       <Route path="/hostelList" element={<HostelList />} />
       <Route path="/AdminLogin" element={<AdminLogin />} />
       <Route path="/adminDashboard" element={<AdminDashboard />} />
+      <Route path="/studentDashboard" element={<StudentDashboard />} />
     </Routes>
   );
 }
