@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
+import Footer from './footer';
 
 function Login() {
   const [studentWebmail, setStudentWebmail] = useState('');
@@ -12,7 +13,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000/api';
+      const API_URL = 'http://localhost:4000/api';
       await axios.post(`${API_URL}/auth/login`, { studentWebmail, password }, { withCredentials: true });
       navigate('/hostelList'); 
     } catch (err) {
@@ -50,6 +51,7 @@ function Login() {
         </form>
         <p>Don't have an account? <Link to="/register">Register here</Link></p>
       </div>
+      <Footer />
     </div>
   );
 }
