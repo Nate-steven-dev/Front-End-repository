@@ -46,7 +46,7 @@ function HostelDetails(){
                 <div class="card-content">
                     <p>10 Single room</p>
                     <p>Shs.1,200,000</p>
-                    <button><a href="booking.html">Book Now</a></button>
+                    <button><a href="booking.html">Book Now!</a></button>
                 </div>
             </div>
             <div className="room-type card">
@@ -54,7 +54,7 @@ function HostelDetails(){
                 <div className="card-content">
                     <p>20 Double room</p>
                     <p>Shs.900,000</p>
-                    <button><a href="booking.html">Book Now</a></button>
+                    <button><a href="booking.html">Book Now!</a></button>
                 </div>
             </div>
             <div className="room-type card">
@@ -62,7 +62,7 @@ function HostelDetails(){
                 <div class="card-content">
                     <p>10 Triple room</p>
                     <p>Shs.600,000</p>
-                    <button><a href="booking.html">Book Now</a></button>
+                    <button><a href="booking.html">Book Now!</a></button>
                 </div>
             </div>
 
