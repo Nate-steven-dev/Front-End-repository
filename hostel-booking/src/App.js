@@ -4,6 +4,8 @@ import './App.css';
 import Login from './components/login';
 import Register from './components/register';
 import HostelList from './components/hostelList';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/adminDashboard';
 
 function Home() {
   return (
@@ -44,6 +46,8 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/hostelList" element={<HostelList />} />
+      <Route path="/AdminLogin" element={<AdminLogin />} />
+      <Route path="/adminDashboard" element={<AdminDashboard />} />
     </Routes>
   );
 }

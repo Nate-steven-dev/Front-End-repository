@@ -1,9 +1,10 @@
 import '../App.css';
+import Footer from './footer';
 
 const Hostel= (props) =>{
     return(
          <div class="hostel-item card">
-                <img alt="hostel"/>
+                <img src={props.image} alt="hostel"/>
                 <div class="card-content">
                     <h4>{props.name}</h4>
                     <p>Location: {props.location}</p>
@@ -11,7 +12,7 @@ const Hostel= (props) =>{
                         <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
                     </div>
                     <p>{props.description}</p>
-                    <a href="hostel-details.html">View Details</a>
+                    <a href="hostel-details.js">View Details</a>
                 </div>
     </div>
     );
@@ -49,6 +50,7 @@ function HostelList(){
             <h4>About Us</h4>
             <p>Your global community for adventure and connection. We provide safe, affordable, and social stays for students</p>
         </div>
+        <Footer />
         </div>
     );
 

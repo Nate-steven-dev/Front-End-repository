@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
+import Footer from './footer';
 
 function Register() {
     const [name, setName] = useState('');
@@ -99,6 +100,7 @@ function Register() {
                 </form>
                 <p>Already have an account? <Link to="/login">Login here</Link></p>
             </div>
+            <Footer />
         </div>
     );
 }
