@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import dreamworldImage from '../Assets/dreamworld.jpeg';
 import '../App.css';
 import Footer from './footer';
 
 // Mock data for hostels - in a real app, this would come from an API
 const hostelsData = [
-    { id: 1, name: "Dream world Hostel", location: "Kikoni", description: "A vibrant hostel in the heart of the city.", image: "https://via.placeholder.com/300x200" },
+    { id: 1, name: "Dream world Hostel", location: "Kikoni", description: "A vibrant hostel in the heart of the city.", image: dreamworldImage },
     { id: 2, name: "Olympia Hostel", location: "Kikoni", description: "Close to all major attractions.", image: "https://via.placeholder.com/300x200" },
     { id: 3, name: "Mwesigwa Residence", location: "Kikoni", description: "Safe, affordable, and social stays.", image: "https://via.placeholder.com/300x200" },
     { id: 4, name: "Helican Hostel", location: "Kikumi kikumi", description: "Modern, fully furnished rooms.", image: "https://via.placeholder.com/300x200" },
