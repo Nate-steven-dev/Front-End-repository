@@ -7,7 +7,7 @@ function Footer() {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-section about">
-                    <h2 className="logo-text">HostelBook</h2>
+                    <h2 className="logo-text">HostelExplorer</h2>
                     <p>
                         Your one-stop solution for finding the best student hostels. We provide safe, affordable, and social stays.
                     </p>
@@ -16,7 +16,7 @@ function Footer() {
                     <h2>Quick Links</h2>
                     <ul>
                         <li><Link to="/hostelList">Hostels</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/about">AboutUs</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
@@ -30,7 +30,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer-bottom">
-                &copy; {new Date().getFullYear()} HostelBook | All rights reserved.
+                &copy; {new Date().getFullYear()} HostelExplorer | All rights reserved.
             </div>
         </footer>
     );
