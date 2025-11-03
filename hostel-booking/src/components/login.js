@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../App.css';
 
 function Login() {
-  const [email, setEmail] = useState('');
+  const [studentWebmail, setStudentWebmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -13,10 +13,10 @@ function Login() {
     e.preventDefault();
     try {
       const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000/api';
-      await axios.post(`${API_URL}/auth/login`, { email, password }, { withCredentials: true });
-      navigate('/hostels'); // Redirect to hostels page after successful login
+      await axios.post(`${API_URL}/auth/login`, { studentWebmail, password }, { withCredentials: true });
+      navigate('/hostelList'); 
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed');
+      setError(err.response?.data?.msg || err.response?.data?.message || 'Login failed');
     }
   };
 
@@ -27,12 +27,12 @@ function Login() {
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Webmail</label>
+            <label htmlFor="email">studentWebmail</label>
             <input
               type="email"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={studentWebmail}
+              onChange={(e) => setStudentWebmail(e.target.value)}
               required
             />
           </div>

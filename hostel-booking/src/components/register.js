@@ -5,10 +5,9 @@ import '../App.css';
 
 function Register() {
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const [studentWebmail, setStudentWebmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [phone, setPhone] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -23,15 +22,30 @@ function Register() {
         }
 
         try {
+            // client-side validation to match backend requirements
+            const emailPattern = /^[a-zA-Z0-9._%+-]+\.[a-zA-Z0-9]+@students\.mak\.ac\.ug$/;
+            if (!emailPattern.test(studentWebmail)) {
+                setError('Email must be a valid student webmail (e.g. name.surname@students.mak.ac.ug)');
+                return;
+            }
+            if (password.length < 8) {
+                setError('Password must be at least 8 characters');
+                return;
+            }
+
             setLoading(true);
-            const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000/api';
-            await axios.post(`${API_URL}/auth/register`, { name, email, password, phone }, { withCredentials: true });
+            const API_URL = 'http://localhost:5000/api';
+            // backend expects `studentWebmail` field
+            await axios.post(`${API_URL}/auth/register`, { name, studentWebmail, password}, { withCredentials: true });
             setLoading(false);
             // Redirect to login after successful registration
             navigate('/login');
         } catch (err) {
             setLoading(false);
-            setError(err.response?.data?.message || 'Registration failed');
+            // Prefer structured server messages when available
+            const serverMsg = err.response?.data?.msg || err.response?.data?.error || err.response?.data?.message;
+            setError(serverMsg || 'Registration failed');
+            console.error('Registration error:', err);
         }
     };
 
@@ -56,8 +70,8 @@ function Register() {
                         <input
                             type="email"
                             id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            value={studentWebmail}
+                            onChange={(e) => setStudentWebmail(e.target.value)}
                             required
                         />
                     </div>
@@ -78,16 +92,6 @@ function Register() {
                             id="confirm-password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="phone">Phone Number</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
                             required
                         />
                     </div>
