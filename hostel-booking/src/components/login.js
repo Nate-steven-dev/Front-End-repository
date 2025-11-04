@@ -13,7 +13,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const API_URL = 'http://localhost:5000/api';
+      const API_URL = process.env.BACKEND_URL || 'http://localhost:5000/api';
       await axios.post(`${API_URL}/auth/login`, { studentWebmail, password }, { withCredentials: true });
       navigate('/hostelList'); 
     } catch (err) {

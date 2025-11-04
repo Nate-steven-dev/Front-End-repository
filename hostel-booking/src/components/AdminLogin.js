@@ -11,7 +11,7 @@ function AdminLogin() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (username === 'admin' && password === 'password') {
+        if (username === "admin" && password === "admin@1234") {
             setError('');
             navigate('/adminDashboard');
         } else {

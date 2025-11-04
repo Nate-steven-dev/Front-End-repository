@@ -35,7 +35,7 @@ function Register() {
             }
 
             setLoading(true);
-            const API_URL = 'http://localhost:5000/api';
+            const API_URL = process.env.BACKEND_URL || 'http://localhost:5000/api';
             // backend expects `studentWebmail` field
             await axios.post(`${API_URL}/auth/register`, { name, studentWebmail, password}, { withCredentials: true });
             setLoading(false);
