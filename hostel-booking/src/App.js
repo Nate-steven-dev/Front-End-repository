@@ -8,6 +8,7 @@ import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/adminDashboard';
 import HostelDetails from './components/hostelDetails';
 import StudentDashboard from './components/studentDashboard';
+import Booking from './components/booking';
 
 function Home() {
   return (
@@ -53,6 +54,8 @@ function App() {
       <Route path="/hostel/:id" element={<HostelDetails />} />
       <Route path="/adminDashboard" element={<AdminDashboard />} />
       <Route path="/studentDashboard" element={<StudentDashboard />} />
+      {/* Updated booking route to accept hostel and room details */}
+      <Route path="/booking/:hostelId/:roomType" element={<Booking />} />
     </Routes>
   );
 }
