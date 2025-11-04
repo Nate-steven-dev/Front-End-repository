@@ -43,7 +43,7 @@ function Register() {
             navigate('/login');
         } catch (err) {
             setLoading(false);
-            // Prefer structured server messages when available
+            
             const serverMsg = err.response?.data?.msg || err.response?.data?.error || err.response?.data?.message;
             setError(serverMsg || 'Registration failed');
             console.error('Registration error:', err);

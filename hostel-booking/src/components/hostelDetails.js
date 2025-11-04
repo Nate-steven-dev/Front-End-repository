@@ -47,7 +47,7 @@ function HostelDetails() {
             <h1>{hostel.name}</h1>
             <div className="gallery">
                 {hostel.images.map((img, index) => (
-                    <img key={index} src={img} alt={`${hostel.name} - Image ${index + 1}`} />
+                    <img key={index} src={img} alt='' />
                 ))}
             </div>
 

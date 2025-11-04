@@ -35,6 +35,7 @@ function Home() {
         <div className="auth-buttons">
           <Link to="/login" className="btn">Login</Link>
           <Link to ="/register" className="btn">Register</Link>
+          <Link to ="/AdminLogin" className="btn">AdminLogin</Link>
         </div>
       </div>
     </div>

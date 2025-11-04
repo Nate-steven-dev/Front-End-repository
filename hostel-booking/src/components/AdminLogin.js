@@ -13,7 +13,6 @@ function AdminLogin() {
         e.preventDefault();
         if (username === 'admin' && password === 'password') {
             setError('');
-            // On successful login, navigate to the admin dashboard
             navigate('/adminDashboard');
         } else {
             setError('Invalid username or password');
