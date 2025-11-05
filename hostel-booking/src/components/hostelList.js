@@ -6,6 +6,8 @@ import olympiaImage from '../Assets/olympia.jpeg';
 import aryanImage from '../Assets/aryan.jpeg';
 import baskonImage from '../Assets/baskon.jpeg';
 import hellicanImage from '../Assets/hellican.jpeg';
+import mwesigwaImage from '../Assets/mwesigwa.jpg';
+import newnanaImage from '../Assets/newnana.jpg';
 import '../App.css';
 import Footer from './footer';
 
@@ -13,11 +15,11 @@ import Footer from './footer';
 const hostelsData = [
     { id: 1, name: "Dream world Hostel", location: "Kikoni", description: "A vibrant hostel in the heart of the city.", image: dreamworldImage },
     { id: 2, name: "Olympia Hostel", location: "Kikoni", description: "Close to all major attractions.", image: olympiaImage },
-    { id: 3, name: "Mwesigwa Residence", location: "Kikoni", description: "Safe, affordable, and social stays.", image: "https://via.placeholder.com/300x200" },
+    { id: 3, name: "Mwesigwa Residence", location: "Kikoni", description: "Safe, affordable, and social stays.", image:mwesigwaImage },
     { id: 4, name: "Helican Hostel", location: "Kikumi kikumi", description: "Modern, fully furnished rooms.", image: hellicanImage},
     { id: 5, name: "Aryan Hostel", location: "Wandegeya", description: "A friendly and supportive environment.", image: aryanImage },
     { id: 6, name: "Muhika Hostel", location: "Kikoni", description: "Your home away from home.", image: muhikaImage },
-    { id: 7, name: "New Nana Hostel", location: "Old Kampala", description: "Experience the best of student life.", image: "https://via.placeholder.com/300x200" },
+    { id: 7, name: "New Nana Hostel", location: "Old Kampala", description: "Experience the best of student life.", image: newnanaImage},
     { id: 8, name: "Baskon Hostel", location: "Kikoni", description: "Comfort and convenience in one package.", image: baskonImage },
 ];
 
