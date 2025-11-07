@@ -1,8 +1,12 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 function Footer() {
+    const { user } = useAuth();
+    const dashboardLink = user?.role === 'admin' ? '/adminDashboard' : '/studentDashboard';
+
     return (
         <footer className="footer">
             <div className="footer-content">
@@ -17,7 +21,7 @@ function Footer() {
                     <ul>
                         <li><Link to="/hostelList">Hostels</Link></li>
                         <li><Link to="/about">AboutUs</Link></li>
-                        <li><Link to="/studentDashboard">Dashboard</Link></li>
+                        {user && <li><Link to={dashboardLink}>Dashboard</Link></li>}
                     </ul>
                 </div>
                 <div className="footer-section social">
