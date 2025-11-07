@@ -14,13 +14,13 @@ const hostelsData = [
         ]
     },
 
-    { id: 2, name: "Olympia Hostel", rooms: [] },
-    { id: 3, name: "Mwesigwa Residence", rooms: [] },
-    { id: 4, name: "Helican Hostel", rooms: [] },
-    { id: 5, name: "Aryan Hostel", rooms: [] },
-    { id: 6, name: "Muhika Hostel", rooms: [] },
-    { id: 7, name: "New Nana Hostel", rooms: [] },
-    { id: 8, name: "Baskon Hostel", rooms: [] },
+    { id: 2, name: "Olympia Hostel", rooms: [ { type: "Single room", price: "1,800,000" }, { type: "Double room", price: "1,000,000" }, { type: "Triple room", price: "800,000" }] },
+    { id: 3, name: "Mwesigwa Residence", rooms: [ { type: "Single room", price: "2,000,000" }, { type: "Double room", price: "1,200,000" }, { type: "Triple room", price: "700,000" }] },
+    { id: 4, name: "Helican Hostel", rooms: [ { type: "Single room", price: "900,000" }, { type: "Double room", price: "600,000" }, { type: "Triple room", price: "400,000" }] },
+    { id: 5, name: "Aryan Hostel", rooms: [ { type: "Single room", price: "1,200,000" }, { type: "Double room", price: "800,000" }, { type: "Triple room", price: "500,000" }] },
+    { id: 6, name: "Muhika Hostel", rooms: [ { type: "Single room", price: "1,000,000" }, { type: "Double room", price: "750,000" }, { type: "Triple room", price: "500,000" }] },
+    { id: 7, name: "New Nana Hostel", rooms: [ { type: "Single room", price: "1,000,000" }, { type: "Double room", price: "900,000" }, { type: "Triple room", price: "600,000" }] },
+    { id: 8, name: "Baskon Hostel", rooms: [ { type: "Single room", price: "800,000" }, { type: "Double room", price: "500,000" }, { type: "Triple room", price: "400,000" }] },
 ];
 
 function Booking() {
