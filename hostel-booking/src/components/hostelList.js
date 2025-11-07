@@ -11,7 +11,7 @@ import newnanaImage from '../Assets/newnana.jpg';
 import '../App.css';
 import Footer from './footer';
 
-// Mock data for hostels - in a real app, this would come from an API
+
 const hostelsData = [
     { id: 1, name: "Dream world Hostel", location: "Kikoni", description: "A vibrant hostel in the heart of the city.", image: dreamworldImage },
     { id: 2, name: "Olympia Hostel", location: "Kikoni", description: "Close to all major attractions.", image: olympiaImage },

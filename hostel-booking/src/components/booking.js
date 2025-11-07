@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import Footer from './footer';
 
-// In a real app, this data would likely come from a global state or an API call
 const hostelsData = [
     { 
         id: 1, 
@@ -14,7 +13,7 @@ const hostelsData = [
             { type: "Triple room", price: "600,000" }
         ]
     },
-    // Add other hostel details here...
+
     { id: 2, name: "Olympia Hostel", rooms: [] },
     { id: 3, name: "Mwesigwa Residence", rooms: [] },
     { id: 4, name: "Helican Hostel", rooms: [] },
