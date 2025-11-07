@@ -1,0 +1,12 @@
+{
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/[^.]+", "dest": "/", "status": 200 }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "@react_app_api_url"
+  },
+  "github": {
+    "silent": true
+  }
+}
