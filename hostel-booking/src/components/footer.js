@@ -17,7 +17,7 @@ function Footer() {
                     <ul>
                         <li><Link to="/hostelList">Hostels</Link></li>
                         <li><Link to="/about">AboutUs</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/studentDashboard">Dashboard</Link></li>
                     </ul>
                 </div>
                 <div className="footer-section social">

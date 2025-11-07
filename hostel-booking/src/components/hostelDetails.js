@@ -8,7 +8,7 @@ import doubleImage from '../Assets/double.jpg';
 import double2Image from '../Assets/double2.jpg';
 import tripleImage from '../Assets/triple.jpg';
 
-// In a real app, this data would likely come from a global state or an API call
+
 const hostelsData = [
     { 
         id: 1, 
@@ -27,7 +27,7 @@ const hostelsData = [
             { type: "Triple room", price: "600,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }
         ]
     },
-    // Add other hostel details here...
+
     { id: 2, name: "Olympia Hostel", location: "Kikoni", description: "Close to all major attractions. Strategically located in the heart of kikoni, next to Makerere's western gate, fenced all around", 
         images: [double2Image,
             single2Image,
