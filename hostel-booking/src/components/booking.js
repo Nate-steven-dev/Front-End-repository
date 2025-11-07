@@ -67,7 +67,7 @@ function Booking() {
         setError('');
         console.log('Booking submitted:', bookingDetails);
         alert('Booking successful!');
-        navigate('/hostelList'); // Redirect after booking
+        navigate('/hostelList'); 
     };
 
     const hostel = hostelsData.find(h => h.id === parseInt(hostelId));
