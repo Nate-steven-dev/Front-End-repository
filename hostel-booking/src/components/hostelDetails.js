@@ -8,94 +8,77 @@ import doubleImage from '../Assets/double.jpg';
 import double2Image from '../Assets/double2.jpg';
 import tripleImage from '../Assets/triple.jpg';
 
-// In a real app, this data would likely come from a global state or an API call
+
 const hostelsData = [
     { 
         id: 1, 
         name: "Dream World Hostel", 
         location: "Kikoni", 
         description: "A vibrant hostel in the heart of the city, close to all major attractions. We offer comfortable dormitory-style accommodations with free Wi-Fi, communal kitchens, and social areas where you can meet fellow students. Our friendly staff are here to help you make the most of your stay.", 
-        images: [
-            singleImage,
-            doubleImage,
-            tripleImage
-        ],
+        images: [ singleImage, doubleImage, tripleImage ],
         amenities: ["Free high-speed Wifi", "Social Area", "Laundry Facilities", "TV room","Shuttle"],
         rooms: [
-            { type: "Single room", price: "1,200,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "900,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "600,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }
+            { type: "Single room", price: "1,200,000", image: singleImage },
+            { type: "Double room", price: "900,000", image: doubleImage },
+            { type: "Triple room", price: "600,000", image: tripleImage }
         ]
     },
-    // Add other hostel details here...
+
     { id: 2, name: "Olympia Hostel", location: "Kikoni", description: "Close to all major attractions. Strategically located in the heart of kikoni, next to Makerere's western gate, fenced all around", 
-        images: [double2Image,
-            single2Image,
-            tripleImage], 
+        images: [double2Image,single2Image,tripleImage], 
         amenities: ["Free high-speed Wifi", "Basketball court", "Laundry Facilities", "TV room","Shuttle"], 
         rooms: [
-            { type: "Single room", price: "1,800,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "1,000,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "800,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }] 
+            { type: "Single room", price: "1,800,000", image: single2Image },
+            { type: "Double room", price: "1,000,000", image: double2Image },
+            { type: "Triple room", price: "800,000", image: tripleImage }] 
         },
     { id: 3, name: "Mwesigwa Residence", location: "Kikoni", description: "Safe, affordable, and social stays. Complete with a restaurant, supermarket, a wide enough parking lot. It's just a home away from home", 
-        images: [tripleImage,
-            single2Image,
-            doubleImage], 
+        images: [tripleImage,single2Image,doubleImage], 
         amenities: ["Free high-speed Wifi", "Mini-supermarket", "Social Area", "Laundry Facilities", "TV room","Shuttle"], 
         rooms: [ 
-            { type: "Single room", price: "2,000,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "1,200,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "700,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }]
+            { type: "Single room", price: "2,000,000", image: single2Image },
+            { type: "Double room", price: "1,200,000", image: doubleImage },
+            { type: "Triple room", price: "700,000", image: double2Image }]
         },
     { id: 4, name: "Helican Hostel", location: "Kikumi kikumi", description: "Modern, fully furnished rooms, like no ohter within and around makerere. Tight security available 24/7, no need to worry about the safety of your lives and property", 
-        images: [double2Image,
-            "https://via.placeholder.com/300x200?text=Gallery+2",
-            "https://via.placeholder.com/300x200?text=Gallery+3"], 
+        images: [double2Image, doubleImage, tripleImage], 
         amenities: ["Free high-speed Wifi", "Backup generator", "Social Area", "Laundry Facilities", "TV room"], 
         rooms: [ 
-            { type: "Single room", price: "900,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "600,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "400,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }] 
+            { type: "Single room", price: "900,000", image: singleImage },
+            { type: "Double room", price: "600,000", image: double2Image },
+            { type: "Triple room", price: "400,000", image: tripleImage }] 
         },
     { id: 5, name: "Aryan Hostel", location: "Wandegeya", description: "A friendly and supportive environment. We have a gym equiped with all the latest mordern tools, which shows that we care as much about your physical fitness", 
-        images: ["https://via.placeholder.com/300x200",
-            "https://via.placeholder.com/300x200?text=Gallery+2",
-            "https://via.placeholder.com/300x200?text=Gallery+3"], 
+        images: [singleImage, single2Image, tripleImage], 
         amenities: ["Free high-speed Wifi", "Gym", "Shuttle", "Laundry Facilities", "TV room"], 
         rooms: [ 
-            { type: "Single room", price: "1,200,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "800,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "500,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }] 
+            { type: "Single room", price: "1,200,000", image: single2Image },
+            { type: "Double room", price: "800,000", image: double2Image },
+            { type: "Triple room", price: "500,000", image: doubleImage }] 
         },
     { id: 6, name: "Muhika Hostel", location: "Kikoni", description: "Your home away from home. Best place to stay for all kinds of people as you will witness from our diverse tenants from diffent backgrounds and lifestyles", 
-        images: ["https://via.placeholder.com/300x200",
-            "https://via.placeholder.com/300x200?text=Gallery+2",
-            "https://via.placeholder.com/300x200?text=Gallery+3"], 
+        images: [singleImage, doubleImage, tripleImage ], 
         amenities: ["Free high-speed Wifi", "Stocked Canteens", "Social Area", "Laundry Facilities", "TV room","Shuttle"], 
         rooms: [ 
-            { type: "Single room", price: "1,000,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "750,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "500,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }] 
+            { type: "Single room", price: "1,000,000", image: singleImage },
+            { type: "Double room", price: "750,000", image: double2Image },
+            { type: "Triple room", price: "500,000", image: tripleImage }] 
         },
     { id: 7, name: "New Nana Hostel", location: "Old Kampala", description: "Experience the best of student life that you will not find anywhere else within and around makerere university", 
-        images: ["https://via.placeholder.com/300x200","https://via.placeholder.com/300x200?text=Gallery+2",
-            "https://via.placeholder.com/300x200?text=Gallery+3"], 
+        images: [double2Image, singleImage, tripleImage], 
         amenities: ["Free high-speed Wifi", "Mini-football pitch", "Social Area", "Laundry Facilities", "TV room","Shuttle"], 
         rooms: [ 
-            { type: "Single room", price: "1,000,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "900,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "600,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }] 
+            { type: "Single room", price: "1,000,000", image: singleImage },
+            { type: "Double room", price: "900,000", image: doubleImage },
+            { type: "Triple room", price: "600,000", image: tripleImage }] 
         },
     { id: 8, name: "Baskon Hostel", location: "Kikoni", description: "Comfort and convenience in one package.We promise you will not have a reason to complain, with our round the clock care and attention to details.", 
-        images: ["https://via.placeholder.com/300x200",
-            "https://via.placeholder.com/300x200?text=Gallery+2",
-            "https://via.placeholder.com/300x200?text=Gallery+3"], 
+        images: [single2Image, double2Image, doubleImage], 
         amenities: ["Free high-speed Wifi", "Printery", "Social Area", "Laundry Facilities", "TV room","Mosque"], 
         rooms: [ 
-            { type: "Single room", price: "800,000", image: "https://via.placeholder.com/250x150?text=Single+Room" },
-            { type: "Double room", price: "500,000", image: "https://via.placeholder.com/250x150?text=Double+Room" },
-            { type: "Triple room", price: "400,000", image: "https://via.placeholder.com/250x150?text=Triple+Room" }] 
+            { type: "Single room", price: "800,000", image: single2Image},
+            { type: "Double room", price: "500,000", image: double2Image },
+            { type: "Triple room", price: "400,000", image: tripleImage }] 
         },
 ];
 
