@@ -1,7 +1,6 @@
 import React, { useState }from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import Footer from './footer';
 
 function AdminLogin() {
     const [username, setUsername] = useState('');
@@ -46,8 +45,7 @@ function AdminLogin() {
                     <button type="submit">Login</button>
                 </form>
             </div>
-            <Footer />
-        </div>
+                </div>
     );
 }
 
