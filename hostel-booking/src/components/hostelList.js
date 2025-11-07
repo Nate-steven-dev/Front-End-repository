@@ -9,7 +9,7 @@ import hellicanImage from '../Assets/hellican.jpeg';
 import mwesigwaImage from '../Assets/mwesigwa.jpg';
 import newnanaImage from '../Assets/newnana.jpg';
 import '../App.css';
-import Footer from './footer';
+import Footer from "./footer";
 
 
 const hostelsData = [
@@ -82,8 +82,10 @@ function HostelList() {
             <div className="About-us">
                 <h4>About Us</h4>
                 <p>Your global community for adventure and connection. We provide safe, affordable, and social stays for students</p>
+            
+            
             </div>
-            <Footer />
+            <Footer/>
         </div>
     );
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
-import Footer from './footer';
 
 function Login() {
   const [studentWebmail, setStudentWebmail] = useState('');
@@ -51,7 +50,6 @@ function Login() {
         </form>
         <p>Don't have an account? <Link to="/register">Register here</Link></p>
       </div>
-      <Footer />
     </div>
   );
 }
