@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Login from './components/login';
@@ -10,9 +10,46 @@ import HostelDetails from './components/hostelDetails';
 import StudentDashboard from './components/studentDashboard';
 import Booking from './components/booking';
 
+const slideshowImages = [
+  'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+];
+ 
+const ImageSlideshow = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // This runs code after the component renders.
+  useEffect(() => {
+    // Start a timer to change the image.
+    const timer = setTimeout(() => {
+      // Update the current image index.
+      setCurrentImageIndex((prevIndex) =>
+        // If it's the last image, go back to the first (0).
+        // Otherwise, show the next image.
+        prevIndex === slideshowImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change image every 5 seconds
+
+    // When the component is removed, or before this effect runs again,
+    // clear the timer to stop it from running.
+    return () => clearTimeout(timer);
+  }, [currentImageIndex]); // Re-run this effect whenever `currentImageIndex` changes.
+                           // This creates the continuous slideshow loop.
+
+  return (
+    <div className="home-slideshow">
+      {slideshowImages.map((image, index) => (
+        <div key={index} className={`slide ${index === currentImageIndex ? 'active' : ''}`} style={{ backgroundImage: `url(${image})` }} />
+      ))}
+    </div>
+  );
+};
+
 function Home() {
   return (
-    <div className="home-background">
+    <div className="home-page">
+      <ImageSlideshow />
       <div className="home-container">
         <div className="intro-text">
           <h1>Welcome to Hostel Explorer</h1>
