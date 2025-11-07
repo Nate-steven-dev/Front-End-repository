@@ -21,6 +21,7 @@ const tenantsData = [
     { id: 1, room: 101, name: "John Doe", roomType: "Single", checkIn: "12th Aug 2024", email: "john.doe@email.com", phone: "+123456789", status: "Confirmed" },
     { id: 2, room: 102, name: "Jane Smith", roomType: "Double", checkIn: "15th Aug 2024", email: "jane.smith@email.com", phone: "+987654321", status: "Confirmed" },
     { id: 3, room: 205, name: "Peter Jones", roomType: "Single", checkIn: "18th Aug 2024", email: "peter.jones@email.com", phone: "+555555555", status: "Pending" },
+    { id: 4, room: 206, name: "John Stones", roomType: "Double", checkIn: "12th Aug 2024", email: "john.stones@email.com", phnone: "+2119765675", status: "Pending" },
 ];
 
 // --- Sub-components for better organization ---
