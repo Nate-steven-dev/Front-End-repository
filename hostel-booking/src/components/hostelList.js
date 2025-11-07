@@ -34,7 +34,6 @@ const Hostel = ({ id, name, location, description, image }) => {
                     <i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i><i>⭐</i>
                 </div>
                 <p>{description}</p>
-                {/* Use Link for internal navigation */}
                 <Link to={`/hostel/${id}`}>View Details</Link>
             </div>
         </div>
