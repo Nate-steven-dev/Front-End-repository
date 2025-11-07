@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from './AuthContext';
 import '../App.css';
 
 function Login() {
   const [studentWebmail, setStudentWebmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000/api';
-      await axios.post(`${API_URL}/auth/login`, { studentWebmail, password }, { withCredentials: true });
+      const response = await axios.post(`${API_URL}/auth/login`, { studentWebmail, password }, { withCredentials: true });
+      login(response.data); // The context will handle setting the role
       navigate('/hostelList'); 
     } catch (err) {
       setError(err.response?.data?.msg || err.response?.data?.message || 'Login failed');
