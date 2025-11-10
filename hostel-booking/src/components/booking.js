@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../App.css';
 import Footer from './footer';
 
@@ -56,17 +57,39 @@ function Booking() {
         setBookingDetails(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Basic validation
         if (!bookingDetails.studentName || !bookingDetails.email || !bookingDetails.checkInDate) {
             setError('Please fill in all required fields.');
             return;
         }
         setError('');
-        console.log('Booking submitted:', bookingDetails);
-        alert('Booking successful!');
-        navigate('/hostelList'); 
+        
+        try {
+            console.log('Sending booking details:', bookingDetails);
+
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/bookings/create`, {
+                ...bookingDetails,
+                duration: "1 semester"
+            });
+
+            console.log('Server response:', response.data);
+
+            if (response.data) {
+                alert('Booking successful!');
+                navigate('/studentDashboard');
+            }
+        } catch (err) {
+            console.error('Full error object:', err);
+            console.error('Error response:', err.response?.data);
+            console.error('Error status:', err.response?.status);
+            setError(
+                err.response?.data?.msg || 
+                err.response?.data?.message || 
+                err.message || 
+                'An error occurred while processing your booking. Please try again.'
+            );
+        }
     };
 
     const hostel = hostelsData.find(h => h.id === parseInt(hostelId));

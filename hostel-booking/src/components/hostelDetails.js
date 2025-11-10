@@ -129,7 +129,6 @@ function HostelDetails() {
                             <div className="card-content">
                                 <p>{room.type}</p>
                                 <p>Shs.{room.price}</p>
-                                {/* Assuming you will have a booking route like /booking/:hostelId/:roomType */}
                                 <Link to={`/booking/${hostel.id}/${encodeURIComponent(room.type)}`} className="btn">Book Now!</Link>
                             </div>
                         </div>

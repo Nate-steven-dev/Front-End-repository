@@ -19,7 +19,6 @@ const slideshowImages = [
 const ImageSlideshow = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // This runs code after the component renders.
   useEffect(() => {
     // Start a timer to change the image.
     const timer = setTimeout(() => {
@@ -29,13 +28,12 @@ const ImageSlideshow = () => {
         // Otherwise, show the next image.
         prevIndex === slideshowImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
     // When the component is removed, or before this effect runs again,
     // clear the timer to stop it from running.
     return () => clearTimeout(timer);
-  }, [currentImageIndex]); // Re-run this effect whenever `currentImageIndex` changes.
-                           // This creates the continuous slideshow loop.
+  }, [currentImageIndex]);
 
   return (
     <div className="home-slideshow">
@@ -91,7 +89,6 @@ function App() {
       <Route path="/hostel/:id" element={<HostelDetails />} />
       <Route path="/adminDashboard" element={<AdminDashboard />} />
       <Route path="/studentDashboard" element={<StudentDashboard />} />
-      {/* Updated booking route to accept hostel and room details */}
       <Route path="/booking/:hostelId/:roomType" element={<Booking />} />
     </Routes>
   );

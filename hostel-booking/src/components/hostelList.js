@@ -41,11 +41,10 @@ const Hostel = ({ id, name, location, description, image }) => {
 }
 
 function HostelList() {
-    // State for search and sort functionality (to be implemented)
+    // State for search and sort functionality 
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOrder, setSortOrder] = useState('price-asc');
 
-    // Filtered and sorted hostels would be derived here
     const displayedHostels = hostelsData.filter(hostel =>
         hostel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         hostel.location.toLowerCase().includes(searchQuery.toLowerCase())

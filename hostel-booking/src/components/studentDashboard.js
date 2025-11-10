@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import Footer from './footer';
 
-// Mock data - in a real app, this would come from props or an API call
 const studentData = {
     name: 'Alex Doe',
     email: 'alex.doe@example.com',
@@ -59,7 +58,6 @@ function MyBookings({ bookings }) {
 }
 
 function ManageAccount() {
-    // Placeholder functions for button actions
     const handleEditProfile = () => alert('Edit Profile clicked!');
     const handleChangePassword = () => alert('Change Password clicked!');
     const handleLogout = () => alert('Logout clicked!');
@@ -84,7 +82,7 @@ function StudentDashboard() {
                     <ManageAccount />
                 </div>
                 <div className="dashboard-main-content">
-                    <MyBookings bookings={bookingsData} /> {/* This will now be the main content */}
+                    <MyBookings bookings={bookingsData} /> 
                 </div>
             </div>
             <Footer />
